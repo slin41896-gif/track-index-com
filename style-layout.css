@@ -1,0 +1,330 @@
+/* ============================================================
+   layout-d/style.css — gameonehk-inspired: Promotional Casino
+   白色 Header + 公告 Ticker + 強促銷 Hero + 彩色頂框卡片
+   Works with hero-a HTML structure
+   ============================================================ */
+
+/* ── Header: white + thick accent bottom ────────────── */
+.site-header {
+  background: var(--clr-bg);
+  border-bottom: 3px solid var(--clr-accent);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.header-inner { height: 64px; }
+.header-logo {
+  color: var(--clr-text);
+  font-size: 20px;
+  letter-spacing: .02em;
+}
+.nav-link { color: var(--clr-text-muted); }
+.nav-link:hover { color: var(--clr-accent); border-color: var(--clr-accent); }
+.nav-link.active { color: var(--clr-accent); border-color: var(--clr-border); }
+
+/* ── HERO: Full-bleed Promotional ───────────────────── */
+.hero-a {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background: var(--clr-bg-dark);
+}
+@media (min-width: 900px) { .hero-a { min-height: 600px; } }
+
+.hero-a-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 25%;
+  background-image: url('https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=1600&h=900&q=80');
+  transition: transform 10s ease;
+}
+.hero-a:hover .hero-a-bg { transform: scale(1.04); }
+
+.hero-a-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--clr-hero-overlay);
+  z-index: 1;
+}
+.hero-a-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-5) var(--space-16);
+}
+.hero-a-content .tag {
+  margin-bottom: var(--space-4);
+  font-size: 12px;
+  letter-spacing: .1em;
+  border-radius: var(--radius-xs);
+}
+.hero-a-title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6vw, 70px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.06;
+  letter-spacing: -.025em;
+  margin-bottom: var(--space-4);
+  max-width: 700px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.35);
+}
+.hero-a-excerpt {
+  font-size: 17px;
+  color: rgba(255,255,255,.90);
+  max-width: 520px;
+  margin-bottom: var(--space-8);
+  line-height: 1.65;
+}
+.hero-a-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.hero-a-meta .author-name { color: #fff; font-weight: 700; }
+.hero-a-meta .btn { font-size: 15px; padding: 12px 32px; }
+
+/* ── Trending Bar → Promotional Category Ticker ──────── */
+.trending-bar {
+  background: var(--clr-bg-dark2);
+  border-bottom: none;
+  border-top: 1px solid var(--clr-border-dark);
+  padding: var(--space-3) 0;
+}
+.trending-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.trending-bar-inner::-webkit-scrollbar { display: none; }
+.trending-label {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--clr-accent);
+  flex-shrink: 0;
+  padding-right: var(--space-3);
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+.trending-tags { display: flex; gap: var(--space-2); flex-shrink: 0; }
+.trending-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: var(--radius-xs);
+  font-size: 12px;
+  font-weight: 700;
+  background: transparent;
+  color: rgba(255,255,255,.80);
+  border: 1px solid rgba(255,255,255,.15);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.trending-tag:hover {
+  background: var(--clr-accent);
+  color: #fff;
+  border-color: var(--clr-accent);
+}
+
+/* ── Promo Cards Section ─────────────────────────────── */
+.featured-section {
+  padding: var(--space-10) 0;
+  background: var(--clr-bg-alt);
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+@media (min-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+  .featured-grid .card:first-child .card-img { aspect-ratio: 16/9; }
+  .featured-grid .card:first-child .card-title { font-size: inherit; }
+}
+
+/* Promo card: colored top border per slot */
+.card {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-top: 4px solid var(--clr-accent);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--clr-shadow);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.card:hover { box-shadow: var(--clr-shadow-md); transform: translateY(-4px); }
+
+/* Each card in a 4-col grid gets a different tag color top */
+.featured-grid .card:nth-child(4n+1) { border-top-color: var(--clr-tag-1); }
+.featured-grid .card:nth-child(4n+2) { border-top-color: var(--clr-tag-2); }
+.featured-grid .card:nth-child(4n+3) { border-top-color: var(--clr-tag-3); }
+.featured-grid .card:nth-child(4n+4) { border-top-color: var(--clr-tag-4); }
+
+.card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--clr-bg-alt); }
+.card-body { padding: var(--space-4) var(--space-4) var(--space-5); }
+.card-meta {
+  display: flex; align-items: center;
+  gap: var(--space-2); margin-bottom: var(--space-3);
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  color: var(--clr-text);
+  margin-bottom: var(--space-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-title:hover { color: var(--clr-accent); }
+.card-excerpt {
+  font-size: 13px; color: var(--clr-text-muted); line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+.card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; color: var(--clr-text-muted);
+  border-top: 1px solid var(--clr-border);
+  padding-top: var(--space-3); margin-top: var(--space-3);
+}
+
+/* ── Main + Sidebar Layout ───────────────────────────── */
+.content-with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  padding: var(--space-10) 0;
+}
+@media (min-width: 900px) {
+  .content-with-sidebar { grid-template-columns: 1fr 300px; }
+}
+
+/* ── Sidebar Widget ──────────────────────────────────── */
+.sidebar-widget {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-top: 3px solid var(--clr-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.sidebar-widget-title {
+  font-size: 11px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--clr-accent);
+  padding-bottom: var(--space-3); margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* ── List Article Row ────────────────────────────────── */
+.article-row {
+  display: flex; gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--clr-border);
+}
+.article-row:last-child { border-bottom: none; }
+.article-row-img {
+  width: 90px; height: 68px;
+  border-radius: var(--radius-xs); object-fit: cover;
+  background: var(--clr-bg-alt); flex-shrink: 0;
+}
+.article-row-title {
+  font-size: 14px; font-weight: 700; line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  margin-bottom: var(--space-1);
+}
+.article-row-title:hover { color: var(--clr-accent); }
+.article-row-date { font-size: 12px; color: var(--clr-text-muted); }
+
+/* ── Rank List ───────────────────────────────────────── */
+.rank-item {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+  padding: var(--space-4) 0; border-bottom: 1px solid var(--clr-border);
+}
+.rank-item:last-child { border-bottom: none; }
+.rank-number {
+  font-family: var(--font-heading); font-size: 36px; font-weight: 900;
+  color: var(--clr-border); line-height: 1; flex-shrink: 0; width: 36px; text-align: right;
+}
+.rank-item:first-child .rank-number { color: var(--clr-accent); }
+.rank-title {
+  font-size: 15px; font-weight: 700; line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.rank-title:hover { color: var(--clr-accent); }
+.rank-meta { font-size: 12px; color: var(--clr-text-muted); margin-top: var(--space-1); }
+
+/* ── CTA Banner: Promotional full-width ──────────────── */
+.cta-banner {
+  background: var(--clr-bg-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  margin: var(--space-12) 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, var(--clr-accent-glow) 0%, transparent 68%);
+}
+.cta-banner h2 {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 900;
+  color: var(--clr-text-inv);
+  margin-bottom: var(--space-4);
+  letter-spacing: -.02em;
+}
+.cta-banner p {
+  position: relative;
+  font-size: 16px;
+  color: var(--clr-text-inv-muted);
+  margin-bottom: var(--space-6);
+  max-width: 520px;
+  margin-left: auto; margin-right: auto;
+}
+
+/* ── Article Page ────────────────────────────────────── */
+.article-page { padding: var(--space-10) 0 var(--space-16); }
+.article-header { margin-bottom: var(--space-8); }
+.article-hero-img {
+  width: 100%; aspect-ratio: 16/7; object-fit: cover;
+  border-radius: var(--radius-sm);
+  border-top: 4px solid var(--clr-accent);
+  margin-bottom: var(--space-8); background: var(--clr-bg-alt);
+}
+.article-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900; line-height: 1.1;
+  letter-spacing: -.02em;
+  margin: var(--space-4) 0 var(--space-5);
+}
+.article-layout-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-10);
+}
+@media (min-width: 900px) {
+  .article-layout-grid { grid-template-columns: 1fr 280px; }
+}
