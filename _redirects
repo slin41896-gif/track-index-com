@@ -1,0 +1,3 @@
+# CF Pages _redirects
+# 404 fallback to index
+/404 /index.html 301
