@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA4_ID%%"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','%%GA4_ID%%');
+  </script>
+
+  <title>馬匹出賽狀態技術評估，跑道適應性量化指標研究 | 賽馬訓練數據庫</title>
+  <meta name="description" content="系統追蹤馬匹跑道距離適應性與沙地草地轉換表現，以數據支持技術性賽前狀態評估。">
+  <link rel="canonical" href="https://track-index.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="馬匹出賽狀態技術評估，跑道適應性量化指標研究 | 賽馬訓練數據庫">
+  <meta property="og:description" content="系統追蹤馬匹跑道距離適應性與沙地草地轉換表現，以數據支持技術性賽前狀態評估。">
+  <meta property="og:url" content="https://track-index.com/">
+  <meta property="og:image" content="https://track-index.com/og-image.png">
+  <meta property="og:locale" content="zh_HK">
+  <meta property="og:site_name" content="賽馬訓練數據庫">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="馬匹出賽狀態技術評估，跑道適應性量化指標研究 | 賽馬訓練數據庫">
+  <meta name="twitter:description" content="系統追蹤馬匹跑道距離適應性與沙地草地轉換表現，以數據支持技術性賽前狀態評估。">
+  <meta name="twitter:image" content="https://track-index.com/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://track-index.com/#website",
+        "url": "https://track-index.com/",
+        "name": "賽馬訓練數據庫",
+        "publisher": { "@id": "https://track-index.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://track-index.com/#organization",
+        "name": "賽馬訓練數據庫",
+        "url": "https://track-index.com/",
+        "logo": { "@type": "ImageObject", "url": "https://track-index.com/LOGO.svg" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "HKJC賠率如何反映市場投注流向？",
+            "acceptedAnswer": { "@type": "Answer", "text": "HKJC採用彩池賠率（Pari-mutuel），賠率由所有投注者的實際投注金額實時計算——某匹馬獲得的投注越多，其賠率越低。因此賠率走勢能直接反映市場資金流向，臨近開賽前賠率急跌通常代表大額智慧錢流入，值得特別關注。" }
+          },
+          {
+            "@type": "Question",
+            "name": "馬匹沙地轉草地表現如何評估？",
+            "acceptedAnswer": { "@type": "Answer", "text": "沙地轉草地適應性主要看三個指標：（1）馬匹過往在草地賽道的勝率記錄；（2）練馬師在場地轉換上的歷史成功率；（3）馬匹的步法特性——重踏型馬一般較適應草地彈性。結合這三個維度，可建立更完整的場地適應性評估。" }
+          },
+          {
+            "@type": "Question",
+            "name": "騎師配搭如何影響馬匹勝率？",
+            "acceptedAnswer": { "@type": "Answer", "text": "特定騎師與練馬師的長期配搭勝率往往顯著高於隨機水平，反映雙方在訓練理念和出賽策略上的深度磨合。研究顯示，在HKJC頂級騎師配搭同一練馬師時，平均勝率可比非慣常搭檔高出5-8個百分點。" }
+          },
+          {
+            "@type": "Question",
+            "name": "什麼是投注池賠率與定點賠率的分別？",
+            "acceptedAnswer": { "@type": "Answer", "text": "HKJC的官方賠率為彩池賠率（賽後按所有投注比例分配）；部分外圍平台提供定點賠率（賽前鎖定賠率）。定點賠率的優勢是賽前即知道確切回報，風險是選中馬如果是市場冷門可能錯過彩池的高賠率。" }
+          },
+          {
+            "@type": "Question",
+            "name": "如何分析馬匹近期出賽狀態？",
+            "acceptedAnswer": { "@type": "Answer", "text": "評估出賽狀態需結合四個面向：（1）上一場比賽的跑法及名次（特別是末段發力情況）；（2）休息天數是否在理想範圍（通常14-21天）；（3）磅重變化是否穩定；（4）練馬師賽前評語中的關鍵詞（如「操練良好」「需要一場」等信號詞）。" }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style-color.css">
+  <link rel="stylesheet" href="style-base.css">
+  <link rel="stylesheet" href="style-layout.css">
+</head>
+<body>
+
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://track-index.com/" class="header-logo">
+      <img src="/LOGO.svg" alt="賽馬訓練數據庫 logo" onerror="this.style.display='none'">
+      賽馬訓練數據庫
+    </a>
+    <nav class="header-nav" aria-label="主導覽">
+      <a href="https://track-index.com/blog.html" class="nav-link">攻略中心</a>
+      <a href="https://track-index.com/about.html" class="nav-link">關於我們</a>
+    </nav>
+    <a href="https://businessdirectory-uk.com/utm_source=racing-data-vault&utm_medium=referral&utm_campaign=satellite-network&utm_content=header-cta" class="btn btn-primary btn-sm" target="_blank" rel="noopener">立即前往</a>
+  </div>
+</header>
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="hero-a" aria-label="精選文章">
+  <div class="hero-a-bg"></div>
+  <div class="hero-a-overlay"></div>
+  <div class="hero-a-content">
+    <span class="tag tag-1" id="hero-cat">精選分析</span>
+    <h1 class="hero-a-title" id="hero-title">馬匹出賽狀態技術評估，跑道適應性量化指標研究</h1>
+    <p class="hero-a-excerpt" id="hero-excerpt">系統追蹤馬匹跑道距離適應性與沙地草地轉換表現，以數據支持技術性賽前狀態評估。</p>
+    <div class="hero-a-meta">
+      <div class="author-byline">
+        <span class="author-name">余紫茵</span>
+        <span class="author-sep">·</span>
+        <span id="hero-date">最新更新</span>
+      </div>
+      <a href="https://businessdirectory-uk.com/utm_source=racing-data-vault&utm_medium=referral&utm_campaign=satellite-network&utm_content=hero-cta" class="btn btn-primary btn-sm" target="_blank" rel="noopener">查看詳情</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRENDING BAR ─────────────────────────────────────────── -->
+<div class="trending-bar" aria-label="熱門話題">
+  <div class="trending-bar-inner">
+    <span class="trending-label">熱門話題</span>
+    <div class="trending-tags" id="trending-tags">
+      <a href="https://track-index.com/blog.html" class="trending-tag">攻略技巧</a>
+      <a href="https://track-index.com/blog.html" class="trending-tag">數據分析</a>
+      <a href="https://track-index.com/blog.html" class="trending-tag">新手入門</a>
+      <a href="https://track-index.com/blog.html" class="trending-tag">策略指南</a>
+      <a href="https://track-index.com/blog.html" class="trending-tag">最新資訊</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── GAME CATEGORIES ──────────────────────────────────────── -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">遊戲 <span class="accent">分類指南</span></h2>
+    </div>
+    <div class="featured-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-1">HKJC賠率追蹤</span></div>
+          <p class="card-excerpt">深度分析香港賽馬投注會入場池賠率走勢，追蹤場外電話投注流量的相關性，識別市場異動信號。</p>
+          <a href="https://track-index.com/blog.html" class="card-footer" style="color:var(--clr-accent);font-weight:700;font-size:13px;text-decoration:none;">查看攻略 →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-2">馬匹狀態評估</span></div>
+          <p class="card-excerpt">系統量化馬匹跑道距離適應性與沙地草地轉換表現，建立出賽狀態評分模型，輔助技術性賽前分析。</p>
+          <a href="https://track-index.com/blog.html" class="card-footer" style="color:var(--clr-accent);font-weight:700;font-size:13px;text-decoration:none;">查看攻略 →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-3">練馬師騎師研究</span></div>
+          <p class="card-excerpt">追蹤HKJC各練馬師出賽策略與騎師配搭歷史勝率，識別特定練馬師在不同賽距和場地的系統性偏好。</p>
+          <a href="https://track-index.com/blog.html" class="card-footer" style="color:var(--clr-accent);font-weight:700;font-size:13px;text-decoration:none;">查看攻略 →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-4">複式投注攻略</span></div>
+          <p class="card-excerpt">從財務視角研究孖寶、三重彩等複式投注的長期期望值，以資金曲線數據推算最優複式投注組合策略。</p>
+          <a href="https://track-index.com/blog.html" class="card-footer" style="color:var(--clr-accent);font-weight:700;font-size:13px;text-decoration:none;">查看攻略 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED ARTICLES ────────────────────────────────────── -->
+<section class="featured-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">最新 <span class="accent">攻略文章</span></h2>
+      <a href="https://track-index.com/blog.html" class="btn btn-outline btn-sm">查看全部</a>
+    </div>
+    <div class="featured-grid" id="articles-grid">
+      <!-- JS rendered -->
+<!-- BLOG_INJECT_START -->
+<!-- BLOG_INJECT_END -->
+    </div>
+  </div>
+</section>
+
+<!-- ── BENEFITS ──────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">為什麼選擇 <span class="accent">賽馬訓練數據庫</span></h2>
+    </div>
+    <div class="featured-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-1">二十年賠率數據</span></div>
+          <p class="card-excerpt">追蹤超過三萬場HKJC賽事的臨場賠率數據，建立香港賽馬業界規模最大的本地賠率歷史資料庫之一。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-2">技術性分析視角</span></div>
+          <p class="card-excerpt">以統計方法量化馬匹狀態、練馬師策略與場地條件，提供有數據支持的技術性賽前評估報告。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-3">每場賽事更新</span></div>
+          <p class="card-excerpt">賽前及時更新各馬匹的最新狀態資訊與賠率走勢，確保你掌握最新鮮的市場動態。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-4">數據揭穿迷思</span></div>
+          <p class="card-excerpt">以實際歷史數據拆解常見賽馬迷信（如「熱門怪馬」現象），幫助投注者建立理性的分析思維。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-5">複式投注指引</span></div>
+          <p class="card-excerpt">從數學期望值角度解析各類複式投注的長期回報，協助投注者在回報率與中獎概率之間取得平衡。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-meta"><span class="tag tag-1">獨立媒體立場</span></div>
+          <p class="card-excerpt">本站分析純基於公開數據，不受任何賭馬集團或投注服務商資助，確保分析的獨立性與客觀性。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT + SIDEBAR ───────────────────────────────── -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="content-with-sidebar">
+
+      <!-- Main: Recent Articles -->
+      <div>
+        <div class="section-divider">
+          <h2 class="section-title">近期文章</h2>
+        </div>
+        <div id="recent-articles">
+          <div class="article-row">
+            <div class="article-row-img" style="background:var(--clr-bg);"></div>
+            <div>
+              <a href="https://track-index.com/blog.html" class="article-row-title">文章持續更新中，敬請期待更多專業分析...</a>
+              <div class="article-row-date">最新更新</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:var(--space-6);text-align:center;">
+          <a href="https://track-index.com/blog.html" class="btn btn-outline">查看所有文章</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="sidebar-widget">
+          <div class="sidebar-widget-title">關於作者</div>
+          <div class="author-byline" style="flex-direction:column;align-items:flex-start;gap:var(--space-3);">
+            <img src="https://api.dicebear.com/9.x/notionists/png?seed=yu-zi-yan&size=200&backgroundColor=fff7ed" alt="余紫茵" style="width:64px;height:64px;border-radius:50%;border:3px solid var(--clr-accent);display:block;object-fit:cover;margin-bottom:var(--space-2);">
+            <div>
+              <div class="author-name" style="font-size:16px;margin-bottom:4px;">余紫茵</div>
+              <div style="font-size:13px;color:var(--clr-accent);font-weight:700;">賽馬訓練數據研究員</div>
+            </div>
+            <p style="font-size:13px;color:var(--clr-text-muted);line-height:1.6;">從事香港及澳門賽馬馬匹訓練狀態量化研究逾11年，以操練時間、出閘反應數據與近期賽績建立馬匹競技狀態評分模型。研究成果獲多家香港賽馬媒體引用，定期為賽馬評論節目提供數據支援。</p>
+            <a href="https://track-index.com/about.html" class="btn btn-ghost btn-sm">了解更多</a>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="sidebar-widget-title">熱門標籤</div>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
+            <a href="https://track-index.com/blog.html" class="tag tag-outline" style="margin-bottom:4px;">攻略技巧</a>
+            <a href="https://track-index.com/blog.html" class="tag tag-outline" style="margin-bottom:4px;">數據分析</a>
+            <a href="https://track-index.com/blog.html" class="tag tag-outline" style="margin-bottom:4px;">策略指南</a>
+            <a href="https://track-index.com/blog.html" class="tag tag-outline" style="margin-bottom:4px;">新手入門</a>
+          </div>
+        </div>
+
+        <div class="sidebar-widget" style="background:var(--clr-bg-dark);border-color:var(--clr-border-dark);">
+          <div class="sidebar-widget-title">立即前往</div>
+          <p style="font-size:13px;color:var(--clr-text-inv-muted);margin-bottom:var(--space-4);line-height:1.6;">取得最新優惠及資訊，立即前往官方平台。</p>
+          <a href="https://businessdirectory-uk.com/utm_source=racing-data-vault&utm_medium=referral&utm_campaign=satellite-network&utm_content=sidebar-cta" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">前往官網</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ──────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container" style="max-width:720px;">
+    <h2 class="section-title">常見問題</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-q">HKJC賠率如何反映市場投注流向？</div>
+        <div class="faq-a">HKJC採用彩池賠率（Pari-mutuel），賠率由所有投注者的實際投注金額實時計算——某匹馬獲得的投注越多，其賠率越低。因此賠率走勢能直接反映市場資金流向，臨近開賽前賠率急跌通常代表大額智慧錢流入，值得特別關注。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">馬匹沙地轉草地表現如何評估？</div>
+        <div class="faq-a">沙地轉草地適應性主要看三個指標：（1）馬匹過往在草地賽道的勝率記錄；（2）練馬師在場地轉換上的歷史成功率；（3）馬匹的步法特性——重踏型馬一般較適應草地彈性。結合這三個維度，可建立更完整的場地適應性評估。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">騎師配搭如何影響馬匹勝率？</div>
+        <div class="faq-a">特定騎師與練馬師的長期配搭勝率往往顯著高於隨機水平，反映雙方在訓練理念和出賽策略上的深度磨合。研究顯示，在HKJC頂級騎師配搭同一練馬師時，平均勝率可比非慣常搭檔高出5-8個百分點。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">什麼是投注池賠率與定點賠率的分別？</div>
+        <div class="faq-a">HKJC的官方賠率為彩池賠率（賽後按所有投注比例分配）；部分外圍平台提供定點賠率（賽前鎖定賠率）。定點賠率的優勢是賽前即知道確切回報，風險是選中馬如果是市場冷門可能錯過彩池的高賠率。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">如何分析馬匹近期出賽狀態？</div>
+        <div class="faq-a">評估出賽狀態需結合四個面向：（1）上一場比賽的跑法及名次（特別是末段發力情況）；（2）休息天數是否在理想範圍（通常14-21天）；（3）磅重變化是否穩定；（4）練馬師賽前評語中的關鍵詞（如「操練良好」「需要一場」等信號詞）。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ────────────────────────────────────────────── -->
+<section class="section container">
+  <div class="cta-banner">
+    <h2>準備好了嗎？</h2>
+    <p>立即前往官方平台，獲取最新優惠與資訊。</p>
+    <a href="https://businessdirectory-uk.com/utm_source=racing-data-vault&utm_medium=referral&utm_campaign=satellite-network&utm_content=banner-cta" class="btn btn-primary btn-lg" target="_blank" rel="noopener">立即前往</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">賽馬訓練數據庫</div>
+        <p class="footer-tagline">系統追蹤馬匹跑道距離適應性與沙地草地轉換表現，以數據支持技術性賽前狀態評估。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">內容分類</div>
+        <a href="https://track-index.com/blog.html" class="footer-link">攻略中心</a>
+        <a href="https://track-index.com/blog.html" class="footer-link">數據分析</a>
+        <a href="https://track-index.com/blog.html" class="footer-link">新手指南</a>
+      </div>
+      <div>
+        <div class="footer-col-title">關於</div>
+        <a href="https://track-index.com/about.html" class="footer-link">關於我們</a>
+        <a href="https://businessdirectory-uk.com/utm_source=racing-data-vault&utm_medium=referral&utm_campaign=satellite-network&utm_content=footer-link" class="footer-link" target="_blank" rel="noopener">官方平台</a>
+      </div>
+      <div>
+        <div class="footer-col-title">法律聲明</div>
+        <a href="https://track-index.com/privacy.html" class="footer-link">私隱政策</a>
+        <a href="https://track-index.com/terms.html" class="footer-link">使用條款</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year">2026</span> 賽馬訓練數據庫. 所有內容僅供參考。</span>
+      <span>本站為獨立媒體，不代表任何平台立場。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // Load recent articles from blog-recent.json
+  fetch('/data/blog-recent.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if (!data || !data.articles || !data.articles.length) return;
+      const grid = document.getElementById('articles-grid');
+      const recent = document.getElementById('recent-articles');
+      const articles = data.articles.slice(0, 6);
+      if (articles.length >= 3) {
+        grid.innerHTML = articles.slice(0,3).map((a, i) => `
+          <div class="card">
+            <img class="card-img" src="${a.imageUrl || ''}" alt="${a.title}" loading="lazy"
+              onerror="this.style.background='var(--clr-bg-alt)';this.src=''">
+            <div class="card-body">
+              <div class="card-meta"><span class="tag tag-${(i%5)+1}">${a.category || '攻略'}</span></div>
+              <a href="/blog/${a.slug}" class="card-title">${a.title}</a>
+              <p class="card-excerpt">${a.excerpt || a.metaDesc || ''}</p>
+              <div class="card-footer">
+                <span>${a.date || ''}</span>
+                <a href="/blog/${a.slug}" style="color:var(--clr-accent);font-weight:700;font-size:12px;">閱讀全文 →</a>
+              </div>
+            </div>
+          </div>`).join('');
+      }
+      if (articles.length) {
+        recent.innerHTML = articles.map((a, i) => `
+          <div class="article-row">
+            <img class="article-row-img" src="${a.imageUrl || ''}" alt="${a.title}" loading="lazy"
+              onerror="this.style.background='var(--clr-bg-alt)';this.src=''">
+            <div>
+              <a href="/blog/${a.slug}" class="article-row-title">${a.title}</a>
+              <div class="article-row-date">${a.date || ''}</div>
+            </div>
+          </div>`).join('');
+        if (articles[0]) {
+          document.getElementById('hero-title').textContent = articles[0].title;
+          document.getElementById('hero-excerpt').textContent = articles[0].excerpt || articles[0].metaDesc || '';
+          if (articles[0].category) document.getElementById('hero-cat').textContent = articles[0].category;
+          if (articles[0].date) document.getElementById('hero-date').textContent = articles[0].date;
+        }
+      }
+    }).catch(() => {});
+</script>
+</body>
+</html>
