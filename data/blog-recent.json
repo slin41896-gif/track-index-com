@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "slug": "hkjc-win-place-odds-explained",
+      "title": "香港賽馬會獨贏與位置投注的賠率結構差異及運作原理解析",
+      "category": "undefined",
+      "date": "2026-05-30",
+      "excerpt": "每次睇跑馬，獨贏同位置賠率都唔同，到底係點樣計出嚟？我一直都想搞清楚背後嘅秘密！",
+      "imageUrl": "https://pixabay.com/get/g1d91baed0b85a8d7e7a5c72477ddbbe4db6971c028bed7ce33264115a4093ce46116e870572ecc935a77b736283c6e49_640.jpg"
+    },
+    {
       "slug": "article",
       "title": "article",
       "category": "General",
