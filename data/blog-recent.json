@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "slug": "horse-form-data-analysis-guide",
+      "title": "馬匹往績數據解讀方法：如何系統分析歷史表現以推算當日競賽狀態",
+      "category": "undefined",
+      "date": "2026-05-30",
+      "excerpt": "每次睇住馬匹出賽，我都好想知佢背後嘅數據點樣解讀，究竟點樣可以從往績中搵到贏馬嘅秘密？今日我哋一齊揭開呢個謎團！",
+      "imageUrl": "https://pixabay.com/get/gcca6291b6d788ebb11c122a94d157cbb5e0c3dd9eb013a8abc2c6901a5eb99463b5edbf56d59eae5c46d238df6a3b7ba607833a08084d7725dc8df8d4a881ef1_640.jpg"
+    },
+    {
       "slug": "article",
       "title": "article",
       "category": "General",
@@ -15,14 +23,6 @@
       "date": "2026-05-30",
       "excerpt": "每次睇跑馬，獨贏同位置賠率都唔同，到底係點樣計出嚟？我一直都想搞清楚背後嘅秘密！",
       "imageUrl": "https://pixabay.com/get/g1d91baed0b85a8d7e7a5c72477ddbbe4db6971c028bed7ce33264115a4093ce46116e870572ecc935a77b736283c6e49_640.jpg"
-    },
-    {
-      "slug": "article",
-      "title": "article",
-      "category": "General",
-      "date": "2026-05-29",
-      "excerpt": "```json",
-      "imageUrl": "https://pixabay.com/get/g50ae38ba26c2a3d8db295bb0375873245ce4dbb021f5d71e2715ccf728e507011b665afb5cd020aa811c824e52b9c6a2_640.jpg"
     }
   ]
 }
