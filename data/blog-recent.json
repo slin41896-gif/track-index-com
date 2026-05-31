@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "slug": "trainer-win-rate-data-analysis",
+      "title": "練馬師勝率數據解析：理性選馬決策的關鍵參考指標",
+      "category": "undefined",
+      "date": "2026-05-31",
+      "excerpt": "我哋成日話跑馬仔講運氣，但其實背後有大量數據可以幫助我哋做更精明嘅決定，練馬師勝率就係其中一個關鍵！",
+      "imageUrl": "https://pixabay.com/get/g933da276dce923aed0d5a72fb147c0cd6d0504912352e3efe87ee80df2eb67846a2032b3155b5f2394a23e0048a93a4e5b82dc6e5a33da8ffe24f64620cf86e1_640.jpg"
+    },
+    {
       "slug": "happy-valley-shatin-track-analysis",
       "title": "解析馬匹在跑馬地表現優於沙田的賽道結構與競技因素",
       "category": "undefined",
@@ -15,14 +23,6 @@
       "date": "2026-05-30",
       "excerpt": "每次睇住馬匹出賽，我都好想知佢背後嘅數據點樣解讀，究竟點樣可以從往績中搵到贏馬嘅秘密？今日我哋一齊揭開呢個謎團！",
       "imageUrl": "https://pixabay.com/get/gcca6291b6d788ebb11c122a94d157cbb5e0c3dd9eb013a8abc2c6901a5eb99463b5edbf56d59eae5c46d238df6a3b7ba607833a08084d7725dc8df8d4a881ef1_640.jpg"
-    },
-    {
-      "slug": "article",
-      "title": "article",
-      "category": "General",
-      "date": "2026-05-30",
-      "excerpt": "```json",
-      "imageUrl": "https://pixabay.com/get/g2edfc69e2f69aea03bf2bcc9a56562d0a01785784be2e4b3d526a8cee9dba70e1731cc2550c34d4c55c51219e3d9f310b5bc57e31c8896f044017118f3612e2a_640.jpg"
     }
   ]
 }
