@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "slug": "horse-weight-handicap-impact-analysis",
+      "title": "馬匹負重對勝算的影響：讓磅制度與競賽表現的實證分析",
+      "category": "undefined",
+      "date": "2026-06-01",
+      "excerpt": "我哋馬迷成日都拗，到底讓磅對馬匹表現有幾大影響？今日就同大家深入探討箇中奧秘，睇吓點樣運用數據提升贏面！",
+      "imageUrl": "https://pixabay.com/get/g450b314fa4bf03195dbf528bfbacd3b40176ba7213013bb05ef2ab80e194ca7f10a926f1365b71dbe11fd0ddd17150537e2907ecbd1f710b67e8eb5e2838f374_640.jpg"
+    },
+    {
       "slug": "jockey-impact-horse-racing-results-analysis",
       "title": "騎師對賽馬結果的影響力：從數據與實戰經驗探討其分析權重",
       "category": "undefined",
@@ -15,14 +23,6 @@
       "date": "2026-05-31",
       "excerpt": "我哋成日話跑馬仔講運氣，但其實背後有大量數據可以幫助我哋做更精明嘅決定，練馬師勝率就係其中一個關鍵！",
       "imageUrl": "https://pixabay.com/get/g933da276dce923aed0d5a72fb147c0cd6d0504912352e3efe87ee80df2eb67846a2032b3155b5f2394a23e0048a93a4e5b82dc6e5a33da8ffe24f64620cf86e1_640.jpg"
-    },
-    {
-      "slug": "happy-valley-shatin-track-analysis",
-      "title": "解析馬匹在跑馬地表現優於沙田的賽道結構與競技因素",
-      "category": "undefined",
-      "date": "2026-05-31",
-      "excerpt": "每次睇跑馬地同沙田賽事，你係咪都覺得有啲馬特別鍾意跑某個場？我哋一齊拆解背後嘅秘密！",
-      "imageUrl": "https://pixabay.com/get/g8ef8e5e37e2372932c0800d922ea3d1e8842c86d0933c65f0a9f75a45befca5e8f93632ad94ba4c69de006b9b7391887250424246ef36761e51035947348df58_640.jpg"
     }
   ]
 }
