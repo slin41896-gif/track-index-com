@@ -105,8 +105,10 @@
       "category": "HKJC分析",
       "angle": "疑問句型",
       "image_theme": "horse racing gate speed barrier trial data",
-      "status": "available",
-      "writing_style": "技術指標解讀，數據驅動，850字"
+      "status": "used",
+      "writing_style": "技術指標解讀，數據驅動，850字",
+      "slug": "hong-kong-horse-racing-start-speed-analysis",
+      "used_date": "2026-06-02"
     },
     {
       "id": 11,
@@ -114,8 +116,10 @@
       "category": "HKJC分析",
       "angle": "疑問句型",
       "image_theme": "HKJC odds board notation explanation",
-      "status": "available",
-      "writing_style": "術語解釋，適合新手，700字"
+      "status": "used",
+      "writing_style": "術語解釋，適合新手，700字",
+      "slug": "article",
+      "used_date": "2026-06-02"
     },
     {
       "id": 12,
