@@ -1,28 +1,28 @@
 {
   "articles": [
     {
+      "slug": "horse-bloodline-track-adaptation-analysis",
+      "title": "馬匹血統對場地適應性的影響：草地與泥地表現的遺傳因素分析",
+      "category": "undefined",
+      "date": "2026-06-03",
+      "excerpt": "每次睇馬，我都好想知隻馬天生啱跑草地定泥地，原來真係有迹可尋！",
+      "imageUrl": "https://pixabay.com/get/g84977aed8b26d2d6472a317779f367d3d8609fdac6df6a65ac0b9460365465b4c48cd9d3709874ba2d2dc001e926145e_640.jpg"
+    },
+    {
       "slug": "article",
       "title": "article",
       "category": "General",
-      "date": "2026-06-02",
+      "date": "2026-06-03",
       "excerpt": "{",
-      "imageUrl": "https://pixabay.com/get/g8b362f2120547801bd31ab0e40a3c3ed1faa06f02c2414c50aeaaca202ca5150b05ecd3739765a2d2eb19557da70b49ab6b65d1be6c53681c17568907f82698a_640.jpg"
+      "imageUrl": "https://pixabay.com/get/g6695719f70b93651f55463d73e1f2fdb7e24ab1e3aee367461cc7a8dd6e3a69d3fb9400697d69768269aa6dbc018262c_640.jpg"
     },
     {
-      "slug": "hong-kong-horse-racing-start-speed-analysis",
-      "title": "賽馬出閘速度數據的解讀方法與實戰應用分析",
+      "slug": "horse-rest-period-race-performance-analysis",
+      "title": "馬匹休息期長短對競賽狀態的影響：從恢復機制到臨場表現分析",
       "category": "undefined",
       "date": "2026-06-02",
-      "excerpt": "每次睇馬，我都會特別留意馬匹出閘嗰一刻，因為呢個真係影響成場賽事走勢嘅關鍵！",
-      "imageUrl": "https://pixabay.com/get/gffbfe3c1050fe09f74df83223468faa11a9832690be9094973d11eb70f38e795dd8d2c15768ed957388b9e5d9d154361dfb4fafdb7e197605ccf0293ed151a0a_640.jpg"
-    },
-    {
-      "slug": "article",
-      "title": "article",
-      "category": "General",
-      "date": "2026-06-01",
-      "excerpt": "{",
-      "imageUrl": "https://pixabay.com/get/gad7009278b0519aa26a36f9913417d9ea3eed54d8db00de13da0f2e8bdb4a36b2c7043d217b6ed4305c96ec69353ed9e_640.jpg"
+      "excerpt": "講到賽馬，馬匹休息期究竟係咪越長越好？我哋馬迷成日都拗呢個問題，今次就深入探討吓，幫大家睇清背後玄機！",
+      "imageUrl": "https://pixabay.com/get/g2aae23f9c2ca65bf7d28419baed11788f634a85d02f5b9b9352067e5c375bd0dfaf0001ee7bc79232bef1c9734516f83_640.jpg"
     }
   ]
 }

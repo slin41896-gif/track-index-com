@@ -6,90 +6,64 @@
   <url><loc>https://track-index.com/contact</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://track-index.com/privacy</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://track-index.com/terms</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-
   <url>
-    <loc>https://track-index.com.com/blog/article</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/hkjc-win-place-odds-explained</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/article</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/horse-form-data-analysis-guide</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/happy-valley-shatin-track-analysis</loc>
+    <loc>https://track-index.com/blog/happy-valley-shatin-track-analysis</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-
   <url>
-    <loc>https://track-index.com.com/blog/trainer-win-rate-data-analysis</loc>
-    <lastmod>2026-05-31</lastmod>
+    <loc>https://track-index.com/blog/hkjc-win-place-odds-explained</loc>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-
   <url>
-    <loc>https://track-index.com.com/blog/jockey-impact-horse-racing-results-analysis</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/horse-weight-handicap-impact-analysis</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/article</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-
-  <url>
-    <loc>https://track-index.com.com/blog/hong-kong-horse-racing-start-speed-analysis</loc>
+    <loc>https://track-index.com/blog/hong-kong-horse-racing-start-speed-analysis</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://track-index.com/blog/horse-form-data-analysis-guide</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://track-index.com/blog/horse-rest-period-race-performance-analysis</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://track-index.com/blog/horse-weight-handicap-impact-analysis</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://track-index.com/blog/jockey-impact-horse-racing-results-analysis</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://track-index.com/blog/_template</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://track-index.com/blog/trainer-win-rate-data-analysis</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <url>
-    <loc>https://track-index.com.com/blog/article</loc>
-    <lastmod>2026-06-02</lastmod>
+    <loc>https://track-index.com/blog/horse-bloodline-track-adaptation-analysis</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -127,8 +127,10 @@
       "category": "馬匹形態",
       "angle": "疑問句型",
       "image_theme": "horse racing rest period fitness effect",
-      "status": "available",
-      "writing_style": "形態分析，含統計，800字"
+      "status": "used",
+      "writing_style": "形態分析，含統計，800字",
+      "slug": "horse-rest-period-race-performance-analysis",
+      "used_date": "2026-06-02"
     },
     {
       "id": 13,
@@ -136,8 +138,10 @@
       "category": "馬匹形態",
       "angle": "疑問句型",
       "image_theme": "horse racing distance suitability short long",
-      "status": "available",
-      "writing_style": "技術分析框架，800字"
+      "status": "used",
+      "writing_style": "技術分析框架，800字",
+      "slug": "article",
+      "used_date": "2026-06-03"
     },
     {
       "id": 14,
@@ -145,8 +149,10 @@
       "category": "馬匹形態",
       "angle": "疑問句型",
       "image_theme": "horse bloodline track surface suitability",
-      "status": "available",
-      "writing_style": "血統分析，引用血緣數據，850字"
+      "status": "used",
+      "writing_style": "血統分析，引用血緣數據，850字",
+      "slug": "horse-bloodline-track-adaptation-analysis",
+      "used_date": "2026-06-03"
     },
     {
       "id": 15,
